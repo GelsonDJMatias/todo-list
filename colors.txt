@@ -1,0 +1,4 @@
+BlueSky - > #2596be
+Dark violet -> #9400d3
+JavaScript color -> #ffcc00
+Black -> #000000

@@ -1,0 +1,293 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*body and container*/
+body {
+    background-color: #f5f7fa;
+    font-family: Arial, sans-serif;
+    color: #2c3e50;
+    transition: background 0.3s, color 0.3s
+}
+
+#container {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    border: 1px solid #dcdde1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/*Dark mode style*/
+.dark {
+    background-color: #121212;
+    color: #f1f1f1;
+}
+
+.dark #container {
+    background-color: #1e1e1e;
+    border: 1px solid #444444
+}
+
+.dark .task-li{
+    background-color: #121212;
+}
+
+.dark #span-text{
+    color: #121212;
+}
+
+.dark #container h1 {
+    color: #e0e0e0;
+}
+
+.dark .task-li input {
+    background-color: #333333;
+    border: 1px solid #555555;
+    color: #f0f0f0;
+}
+
+#modedark {
+    margin: 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #222;
+}
+
+.fa-sun{
+    color: #f39c12;
+    font-size: 1.5rem;
+    padding: 16px 16px;
+    transition: background-color 0.3s;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+}
+
+.fa-moon {
+    color: #f39c12;
+    font-size: 1.5rem;
+    padding: 16px 20px;
+    transition: background-color 0.3s;
+    border: none;
+    border-radius: 6px;
+    outline: none;
+}
+
+/*Main title (h1)*/
+#container h1{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+/*Input field and 'Add' button*/
+#input-field {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#input-task {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #dcdde1;
+    border-radius: 6px;
+    outline: none;
+}
+
+#addButton {
+    padding: 10px 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#addButton:hover {
+    background-color: #2980b9;
+}
+
+/*Edit div and input field*/
+.edit-field{
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+.hidden {
+    display: none !important;
+}
+.edit-field input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #f39c12;
+    border-radius: 6px;
+    outline: none;
+}
+
+.edit-field button {
+    color: #ffffff;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 10px 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+    background-color: #f39c12;
+}
+
+.edit-field button:hover {
+    color: #ffffff;
+    background-color: #d4870aff;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/*Task list <li> div principal pai da <ul>*/
+#task-wrapper {
+    max-height: 40vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 10px;
+    position: relative; 
+    max-height: 50vh;
+    max-width: 90vw;
+    scrollbar-width: thin;
+    scrollbar-color: #007bff;
+}
+
+/*ul*/
+#list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+/*li*/
+.task-li {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/*Div que contem o título e o botão (filho da <li>)*/
+#box-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1px solid #dcdde1;
+    border-radius: 6px;
+    padding: 12px 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+/*Action buttons*/
+#buttons {
+    display: flex;
+    gap: 10px;
+}
+
+button.edit {
+    color: #f39c12;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+button.delete {
+    color: #e74c3c;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+button.check {
+    color: #27ae60;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+button.removeCheck {
+    color: #e74c3c;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/*span*/
+.task-li span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+#span-check {
+    color: #27ae60;
+    margin-right: 6px;
+}
+
+/*Developed*/
+#crafted {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/*Tooltip and tooltip-text*/
+.tooltip {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    z-index: 10;
+}
+
+.tooltip .tooltip-text {
+    visibility: hidden;
+    width: max-content;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px 8px;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 9999;
+    bottom: 125%;
+    left: -50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+    font-size: 13px;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
