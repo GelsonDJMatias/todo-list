@@ -227,7 +227,7 @@ function setMode(setIn) {
     return localStorage.setItem("dark-mode", `${setIn}`);
 }
 
-//Dark 
+//Dark mode settings
 const btnMode = document.getElementById("modedark");
 const mode = document.body;
 let darkmode = getMode();
@@ -244,12 +244,21 @@ const disableDarkMode = () => {
     setMode(disablited);
 }
 
+//Icon fontAwesome (Sun and Moon)
+function faSun() {
+    return btnMode.innerHTML = '<i class="fa-solid fa-sun"></i>';
+}
 
+function faMoon() {
+    return  btnMode.innerHTML = '<i class="fa-solid fa-moon"></i>';
+}
+
+// verify if dark mode is enable
 if(darkmode === "enable") {
     enableDarkMode();
-    btnMode.innerHTML = '<i class="fa-solid fa-sun"></i>';
+    faSun();
 } else {
-    btnMode.innerHTML = '<i class="fa-solid fa-moon"></i>';
+    faMoon();
 }
 
 //event to listener the mode
@@ -258,10 +267,10 @@ btnMode.addEventListener("click", () => {
 
     if(darkmode === "disable"){
         enableDarkMode();
-        btnMode.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        faSun();
     } else {
         disableDarkMode();
-        btnMode.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        faMoon();
     }
 })
 
