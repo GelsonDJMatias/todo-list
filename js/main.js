@@ -20,7 +20,11 @@ function newTask() {
 
     //Reject if input field is empty
     if(text === '') {
-        alert("⚠ Oops! The field is empty. Please enter a task to continue.");
+        Swal.fire({
+            icon: "error",
+            title: "Oops!",
+            text: "The field is empty. Please enter a task to continue.",
+        })
         return;
     }
 
@@ -160,7 +164,10 @@ function saveTask(id) {
     const task = tasks.find(task => task.id === id);
 
     if(input.value.trim() === '') {
-        alert("⚠ Oops! The field is empty. Please enter a task to continue.");
+        Swal.fire({
+            icon:"info",
+            text:"The field is empty. Please enter a task to continue."
+        })
         return input.value = task.name;
     }
 
